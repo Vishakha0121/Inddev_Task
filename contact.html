@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Lifestyle Store</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #f8f9fa, #dee2e6);
+        }
+
+        .header {
+            background-color: #212529;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .navbar-brand {
+            color: #fff;
+        }
+
+        .breadcrumb-item a {
+            color: #0275d8;
+            text-decoration: none;
+        }
+
+        .contact-details h3 {
+            color: #333;
+        }
+
+        .contact-details p {
+            color: #555;
+        }
+
+        .card-body {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control {
+            border-color: #ccc;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #80bdff;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            font-size: 14px;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/disc.png" alt="Logo" style="height: 30px; width: auto; margin-right: 10px;">
+                    Lifestyle Store
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="productpage.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cart.html">Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div style="padding: 50px; position: relative;">
+        <h1 style="color: #333;">Contact</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html" style="color:#0275d8">Lifestyle Store</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Contact</li>
+            </ol>
+        </nav>
+        <div class="contact-details">
+            <h3>Contact Details</h3>
+            <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+            <p>Phone: (123)456-7890</p>
+            <p>E-mail: <a href="#" style="text-decoration: none; color: #333;">name@example.com</a></p>
+            <p>Working Hour: Monday - Friday: 9:00 AM to 5:00 PM</p>
+        </div>
+        <br>
+        <div class="card-body" style="width: 50rem; position: relative;">
+            <h3>Send us a message</h3>
+            <form onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                    <div class="error" id="fullNameError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="text" class="form-control" id="phoneNumber" placeholder="Enter your phone number"
+                        required>
+                    <div class="error" id="phoneNumberError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="emailAddress">Email Address:</label>
+                    <input type="email" class="form-control" id="emailAddress" placeholder="Enter your email address"
+                        required>
+                    <div class="error" id="emailAddressError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea class="form-control" id="message" rows="6" placeholder="Enter your message"
+                        required></textarea>
+                    <div class="error" id="messageError"></div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="text-align:center;">Copyright © Lifestyle Store.
+                All Rights Reserved | Contact Us: +91 90000 00000</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pzjPLNQj8A/uejYHPi2g5SY2/TWdOH2urVdwp75mCVIAbBdFL2Rv8y20mtY34yS3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function validateForm() {
+            clearErrors();
+
+            var fullName = document.getElementById("fullName").value;
+            var phoneNumber = document.getElementById("phoneNumber").value;
+            var emailAddress = document.getElementById("emailAddress").value;
+            var message = document.getElementById("message").value;
+
+            // Validate Full Name (not empty)
+            if (fullName === "") {
+                showError("fullNameError", "Please enter your full name");
+                return false;
+            }
+
+            // Validate Phone Number (not empty)
+            if (phoneNumber === "") {
+                showError("phoneNumberError", "Please enter your phone number");
+                return false;
+            }
+
+            // Validate Email Address (not empty and valid format)
+            if (emailAddress === "") {
+                showError("emailAddressError", "Please enter your email address");
+                return false;
+            } else if (!validateEmail(emailAddress)) {
+                showError("emailAddressError", "Please enter a valid email address");
+                return false;
+            }
+
+            // Validate Message (not empty)
+            if (message === "") {
+                showError("messageError", "Please enter your message");
+                return false;
+            }
+
+            // Form is valid
+            return true;
+        }
+
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+
+        function showError(elementId, errorMessage) {
+            document.getElementById(elementId).innerHTML = errorMessage;
+        }
+
+        function clearErrors() {
+            var errorElements = document.getElementsByClassName("error");
+            for (var i = 0; i < errorElements.length; i++) {
+                errorElements[i].innerHTML = "";
+            }
+        }
+    </script>
+</body>
+
+</html>
